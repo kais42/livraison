@@ -1,0 +1,13 @@
+---
+# tasks file for docker-registry
+- name: login
+  docker_login:
+    username: "kais42"
+    password: "coucou123"
+    reauthorize: yes
+- name: docker push
+  docker_image:
+    name: devops:latest
+    repository: kais42/livraison
+    push: yes
+    source: local
