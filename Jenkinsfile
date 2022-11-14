@@ -31,5 +31,14 @@ pipeline {
           }
        }
     }
+
+    stage('Monitoring') {
+      steps {
+        script {
+           sh 'cd /var/lib/jenkins/workspace/livraison'
+           sh 'docker compose up -d'
+          }
+       }
+    }
    }
 }
